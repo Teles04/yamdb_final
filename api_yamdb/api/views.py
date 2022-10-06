@@ -9,7 +9,6 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import AccessToken
 from rest_framework import viewsets, filters, permissions, status
-
 from api.permissions import (IsAdmin,
                              AdminOrReadOnly,
                              IsAdminModeratorOwnerOrReadOnly)
