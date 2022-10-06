@@ -36,6 +36,7 @@ jobs:
         # Проверка доступности репозитория Docker Hub для workflow
         uses: actions/checkout@v2 
       - name: Set up Docker Buildx
+        working-directory: ./api_yamdb
         # Вызов сборщика контейнеров docker
         uses: docker/setup-buildx-action@v1 
       - name: Login to Docker 
