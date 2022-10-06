@@ -1,0 +1,95 @@
+###
+@hostname = localhost
+@port = 8000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+# teles
+# @Authorization = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU1NDM1Nzk1LCJqdGkiOiI4MTE3NWYxYTA2NjE0ODQzODQ3NWViZGZlYTM4OWRhMSIsInVzZXJfaWQiOjF9.FavVdqLETaVrW5i-FfS7wMUotJ4haa_QTB-EnJ66ynk
+# test1
+# @Authorization = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2MDA2MTMwLCJqdGkiOiJlZjk2MDhhMWM1YTM0NmQzOTZiYzk4OTVmNmVhMTgyYiIsInVzZXJfaWQiOjN9.yyvmKSpNiSohQW_nRv2UB11105sMpS6Lv6od6eJGEzc
+# test3
+# @Authorization = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2MDA1Mzk0LCJqdGkiOiI4ZjMzYmQyOTdhYjk0MDJhOTY3MzhhOWVlNWYwOWRhMiIsInVzZXJfaWQiOjV9.cWq-16J7SdqatAMwv8MCgJc-hA5ob7A3BI8QZWIrMTA
+
+### GET TITLES
+http://127.0.0.1:8000/api/v1/titles/
+# Authorization: {{Authorization}}
+
+### GET REVIEW
+http://127.0.0.1:8000/api/v1/titles/1/reviews/
+# Authorization: {{Authorization}}
+
+### GET REVIEW ON ID
+http://127.0.0.1:8000/api/v1/titles/1/reviews/3/
+# Authorization: {{Authorization}}
+
+### GET COMMENTS
+http://127.0.0.1:8000/api/v1/titles/1/reviews/3/comments/
+# Authorization: {{Authorization}}
+
+### CREATE NEW TITLE
+POST  http://127.0.0.1:8000/api/v1/titles/
+Content-type: {{contentType}}
+# Authorization: {{Authorization}}
+
+{
+
+    "name": "test2",
+    "year": 0,
+    "description": "test2",
+    "genre": 
+
+    [
+        "1"
+    ],
+    "category": "1"
+
+}
+
+### CREATE NEW REVIEW
+POST  http://127.0.0.1:8000/api/v1/titles/1/reviews/
+Content-type: {{contentType}}
+# Authorization: {{Authorization}}
+
+{
+    "text": "test new",
+    "score": 5
+}
+
+
+### PUT/PATCH REVIEW
+PATCH  http://127.0.0.1:8000/api/v1/titles/1/reviews/1/
+Content-type: {{contentType}}
+# Authorization: {{Authorization}}
+
+{
+    "text": "teles",
+    "score": 2
+}
+
+### DELETE REVIEW
+DELETE http://127.0.0.1:8000/api/v1/titles/1/reviews/1/
+# Authorization: {{Authorization}}
+
+### CREATE NEW COMMENT
+POST http://127.0.0.1:8000/api/v1/titles/1/reviews/3/comments/
+Content-type: {{contentType}}
+# Authorization: {{Authorization}}
+
+{
+
+    "text": "test30476576t+76534 new NEW comment"
+
+}
+
+### PUT/PATCH COMMENT
+PATCH http://127.0.0.1:8000/api/v1/titles/1/reviews/3/comments/2/
+Content-type: {{contentType}}
+# Authorization: {{Authorization}}
+
+{
+
+    "text": "test comment"
+}
+
+### DELETE COMMENT
+DELETE http://127.0.0.1:8000/api/v1/titles/1/reviews/3/comments/1/
