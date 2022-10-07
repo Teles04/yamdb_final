@@ -8,7 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: teles07/api_yamdb:latest
+    image: teles07/api_yamdb:v1.0
     restart: always
     volumes:
       - static_value:/app/static/
