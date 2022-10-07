@@ -48,8 +48,8 @@ jobs:
         # Пуш образа в Docker Hub 
         uses: docker/build-push-action@v2 
         with:
+          context: ./api_yamdb/
           push: true
-          file: ./api_yamdb/Dockerfile
           tags: teles07/api_yamdb
 
   deploy:
