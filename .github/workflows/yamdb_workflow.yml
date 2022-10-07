@@ -21,7 +21,7 @@ jobs:
       run: |
         python -m flake8
     - name: Run tests
-      working-directory: /yamdb_final
+      working-directory: ./yamdb_final
       run: pytest
 
   build_and_push_to_docker_hub:
