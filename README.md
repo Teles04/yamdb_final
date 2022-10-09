@@ -7,6 +7,7 @@ yamdb_final
 - Postgres
 - Docker
 - Gunicorn
+- Nginx
 
 ## Краткое описание проекта:
 Проект YaMDb собирает отзывы (Review) пользователей на произведения (Title). Произведения делятся на категории: «Книги», «Фильмы», «Музыка». Список категорий (Category) может быть расширен администратором (например, можно добавить категорию «Изобразительное искусство» или «Ювелирка»).
@@ -23,6 +24,7 @@ POSTGRES_USER=user_name
 POSTGRES_PASSWORD=db_password
 DB_HOST=db
 DB_PORT=port_number
+SECRET_KEY=(str, 'secret_key')
 '''
 
 ## Команды для запуска приложения в контейнерах:
